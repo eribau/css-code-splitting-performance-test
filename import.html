@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CSS Test</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="CSS loading performance test">
+
+		<!-- Stylesheet -->
+		<link rel="stylesheet" href="dist/main-import.css" type="text/css">
+	</head>
+	<body>
+
+		<main class="container container-small" id="main" tabindex="-1" markdown="1"><h1 id="components">CSS Performance Test</h1>
+		<h2 id="grid">Grid</h2>
+		<p>The <code>.container</code> class centers content on the page and restricts it to a maximum width.</p>
+		<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+		    &lt;p&gt;The &lt;code&gt;.container&lt;/code&gt; class centers content on the page and restricts it to a maximum width.&lt;/p&gt;
+		&lt;/div&gt;</code></pre>
+		<p>Kraken also includes a simple, mobile-first grid system built with CSS Grid.</p>
+		<p>It&#39;s designed to be a starting point you can modify and build on (or delete altogether) depending on your project. Modify as needed.</p>
+		<h3 id="fraction-based-layouts">Fraction-based layouts</h3>
+		<p>Kraken uses fraction-based grids, because it makes the math of grid-based layouts easier.</p>
+		<p>To create a grid, add a <code>&lt;div&gt;</code> with a <code>.row</code> class. You can create grids within a row by creating <code>&lt;div&gt;</code> elements with the <code>.grid-*</code> class.</p>
+		<div class="row">
+		    <div class="grid-third grid-highlight">.grid-third</div>
+		    <div class="grid-two-thirds grid-highlight">.grid-two-thirds</div>
+		</div>
+
+		<div class="row">
+		    <div class="grid-fourth grid-highlight">.grid-fourth</div>
+		    <div class="grid-three-fourths grid-highlight">.grid-three-fourths</div>
+		</div>
+
+		<div class="row">
+		    <div class="grid-half grid-highlight">.grid-half</div>
+		    <div class="grid-half grid-highlight">.grid-half</div>
+		</div>
+
+		<div class="row">
+		    <div class="grid-fourth grid-highlight">.grid-fourth</div>
+		    <div class="grid-half grid-highlight">.grid-half</div>
+		    <div class="grid-fourth grid-highlight">.grid-fourth</div>
+		</div>
+
+		<pre><code class="language-html">&lt;div class=&quot;row&quot;&gt;
+		    &lt;div class=&quot;grid-third&quot;&gt;.grid-third&lt;/div&gt;
+		    &lt;div class=&quot;grid-two-thirds&quot;&gt;.grid-two-thirds&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;row&quot;&gt;
+		    &lt;div class=&quot;grid-fourth&quot;&gt;.grid-fourth&lt;/div&gt;
+		    &lt;div class=&quot;grid-three-fourths&quot;&gt;.grid-three-fourths&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;row&quot;&gt;
+		    &lt;div class=&quot;grid-half&quot;&gt;.grid-half&lt;/div&gt;
+		    &lt;div class=&quot;grid-half&quot;&gt;.grid-half&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;row&quot;&gt;
+		    &lt;div class=&quot;grid-fourth&quot;&gt;.grid-fourth&lt;/div&gt;
+		    &lt;div class=&quot;grid-half&quot;&gt;.grid-half&lt;/div&gt;
+		    &lt;div class=&quot;grid-fourth&quot;&gt;.grid-fourth&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+		<h3 id="more-or-less-space-between-columns">More or less space between columns</h3>
+		<p>You can double the space between columns in a grid by adding the <code>.row-gap-large</code> class, or remove it altogether by adding the <code>.row-no-gap</code> class.</p>
+		<div class="row row-gap-large">
+		    <div class="grid-third grid-highlight">.grid-third</div>
+		    <div class="grid-third grid-highlight">.grid-third</div>
+		    <div class="grid-third grid-highlight">.grid-third</div>
+		</div>
+
+		<div class="row row-no-gap">
+		    <div class="grid-third grid-highlight">.grid-third</div>
+		    <div class="grid-third grid-highlight">.grid-third</div>
+		    <div class="grid-third grid-highlight">.grid-third</div>
+		</div>
+
+		<pre><code class="language-html">&lt;div class=&quot;row row-gap-large&quot;&gt;
+		    &lt;div class=&quot;grid-third&quot;&gt;.grid-third&lt;/div&gt;
+		    &lt;div class=&quot;grid-third&quot;&gt;.grid-third&lt;/div&gt;
+		    &lt;div class=&quot;grid-third&quot;&gt;.grid-third&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;row row-no-gap&quot;&gt;
+		    &lt;div class=&quot;grid-third&quot;&gt;.grid-third&lt;/div&gt;
+		    &lt;div class=&quot;grid-third&quot;&gt;.grid-third&lt;/div&gt;
+		    &lt;div class=&quot;grid-third&quot;&gt;.grid-third&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+		<h3 id="automatically-scaling-grids">Automatically scaling grids</h3>
+		<p>The <code>.row-auto</code> class will scale the content to fit whatever space is available.</p>
+		<div class="row row-auto">
+		    <div class="grid-highlight">Auto Scales</div>
+		    <div class="grid-highlight">Auto Scales</div>
+		    <div class="grid-highlight">Auto Scales</div>
+		    <div class="grid-highlight">Auto Scales</div>
+		    <div class="grid-highlight">Auto Scales</div>
+		</div>
+
+		<pre><code class="language-html">&lt;div class=&quot;row row-auto&quot;&gt;
+		    &lt;div&gt;Auto Scales&lt;/div&gt;
+		    &lt;div&gt;Auto Scales&lt;/div&gt;
+		    &lt;div&gt;Auto Scales&lt;/div&gt;
+		    &lt;div&gt;Auto Scales&lt;/div&gt;
+		    &lt;div&gt;Auto Scales&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+		<h3 id="content-choreography">Content Choreography</h3>
+		<p>You can flip the order of grid items on bigger screens with a series of helper classes.</p>
+		<p>Add the <code>.grid-start-first</code> class to move content to the beginning of a row. Use <code>.grid-start-{fraction}</code> classes start content at a specific spot in a grid.</p>
+		<div class="row">
+		    <div class="grid-third grid-highlight">1</div>
+		    <div class="grid-third grid-start-first grid-highlight">2</div>
+		    <div class="grid-third grid-highlight">3</div>
+		</div>
+
+		<div class="row">
+		    <div class="grid-third grid-highlight">1</div>
+		    <div class="grid-third grid-start-two-thirds grid-highlight">2</div>
+		    <div class="grid-third grid-highlight">3</div>
+		</div>
+
+		<div class="row">
+		    <div class="grid-third grig-start-two-thirds grid-highlight">1</div>
+		    <div class="grid-third grid-start-third grid-highlight">2</div>
+		    <div class="grid-third grid-start-first grid-highlight">3</div>
+		</div>
+
+		<pre><code class="language-html">&lt;div class=&quot;row&quot;&gt;
+		    &lt;div class=&quot;grid-third&quot;&gt;1&lt;/div&gt;
+		    &lt;div class=&quot;grid-third grid-start-first&quot;&gt;2&lt;/div&gt;
+		    &lt;div class=&quot;grid-third&quot;&gt;3&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;row&quot;&gt;
+		    &lt;div class=&quot;grid-third&quot;&gt;1&lt;/div&gt;
+		    &lt;div class=&quot;grid-third grid-start-two-thirds&quot;&gt;2&lt;/div&gt;
+		    &lt;div class=&quot;grid-third&quot;&gt;3&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;row&quot;&gt;
+		    &lt;div class=&quot;grid-third grig-start-two-thirds&quot;&gt;1&lt;/div&gt;
+		    &lt;div class=&quot;grid-third grid-start-third&quot;&gt;2&lt;/div&gt;
+		    &lt;div class=&quot;grid-third grid-start-first&quot;&gt;3&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+		<h2 id="typography">Typography</h2>
+		<p>Kraken uses relative sizing (ems and %, not pixels) for everything.</p>
+		<p>The <code>body</code> has a base <code>font-size</code> of <code>100%</code>, which is <code>16px</code> on browsers with default font settings. All other sizes are in ems. Changing the <code>font-size</code> on the <code>body</code> element will adjust the typographical scale for the entire site.</p></p>
+		<p><em>New to relative sizing? <a href="http://gomakethings.com/working-with-relative-sizing/">Learn more.</a></em></p>
+		<h3 id="text-basics">Text Basics</h3>
+		<p>Default text<br>
+		<span class="text-muted">Muted text</span><br>
+		<span class="text-small">Small text</span><br>
+		<span class="text-large">Large text</span><br>
+		<a href="#">Hyperlinks</a><br>
+		<strong>Bold</strong>, <em>italics</em>, and <del>strikethrough</del><br>
+		<mark>Highlighted text</mark></p>
+		<pre><code class="language-html">Default text
+		&lt;span class=&quot;text-muted&quot;&gt;Muted text&lt;/span&gt;
+		&lt;span class=&quot;text-small&quot;&gt;Small text&lt;/span&gt;
+		&lt;span class=&quot;text-large&quot;&gt;Large text&lt;/span&gt;
+		&lt;a href=&quot;#&quot;&gt;Hyperlinks&lt;/a&gt;
+		&lt;strong&gt;Bold&lt;/strong&gt;, &lt;em&gt;italics&lt;/em&gt;, and &lt;del&gt;strikethrough&lt;/del&gt;
+		&lt;mark&gt;Highlighted text&lt;/mark&gt;</code></pre>
+		<p><em>Because Kraken uses relative sizing, you should always apply <code>.text-large</code> and <code>.text-small</code> classes to a <code>span</code> element and not directly to a <code>p</code>. Otherwise, your spacing will get all messed up. The <code>.text-*</code> classes can be found in <code>_overrides.scss</code> for better cascade inheritance.</em></p>
+		<hr>
+		<h2 id="lists">Lists</h2>
+		<p>Kraken includes styling for ordered, unordered, unstyled, inline, and definition lists.</p>
+		<div class="row-thirds">
+		    <div>
+		        <strong>Ordered</strong>
+		        <ol>
+		            <li>Item 1</li>
+		            <li>Item 2</li>
+		            <li>Item 3</li>
+		        </ol>
+		    </div>
+		    <div>
+		        <strong>Unordered</strong>
+		        <ul>
+		            <li>Item 1</li>
+		            <li>Item 2</li>
+		            <li>Item 3</li>
+		        </ul>
+		    </div>
+		    <div>
+		        <strong>Unstyled</strong>
+		        <ul class="list-unstyled">
+		            <li>Item 1</li>
+		            <li>Item 2</li>
+		            <li>Item 3</li>
+		        </ul>
+		    </div>
+		</div>
+
+		<div>
+		    <strong>Inline</strong>
+		    <ul class="list-inline">
+		        <li>Item 1</li>
+		        <li>Item 2</li>
+		        <li>Item 3</li>
+		    </ul>
+		</div>
+
+		<dl>
+		    <dt>Definition List</dt>
+		    <dd>Encloses a list of pairs of terms and descriptions. Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).</dd>
+		    <dt>Here's another term</dt>
+		    <dd>And here's the definition that would go with it.</dd>
+		</dl>
+
+		<pre><code class="language-html">Ordered
+		&lt;ol&gt;
+		    &lt;li&gt;Item 1&lt;/li&gt;
+		    &lt;li&gt;Item 2&lt;/li&gt;
+		    &lt;li&gt;Item 3&lt;/li&gt;
+		&lt;/ol&gt;
+
+		Unordered
+		&lt;ul&gt;
+		    &lt;li&gt;Item 1&lt;/li&gt;
+		    &lt;li&gt;Item 2&lt;/li&gt;
+		    &lt;li&gt;Item 3&lt;/li&gt;
+		&lt;/ul&gt;
+
+		Unstyled
+		&lt;ul class=&quot;list-unstyled&quot;&gt;
+		    &lt;li&gt;Item 1&lt;/li&gt;
+		    &lt;li&gt;Item 2&lt;/li&gt;
+		    &lt;li&gt;Item 3&lt;/li&gt;
+		&lt;/ul&gt;
+
+		Inline
+		&lt;ul class=&quot;list-inline&quot;&gt;
+		    &lt;li&gt;Item 1&lt;/li&gt;
+		    &lt;li&gt;Item 2&lt;/li&gt;
+		    &lt;li&gt;Item 3&lt;/li&gt;
+		&lt;/ul&gt;
+
+		&lt;dl&gt;
+		    &lt;dt&gt;Definition List&lt;/dt&gt;
+		    &lt;dd&gt;Encloses a list of pairs of terms and descriptions. Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).&lt;/dd&gt;
+
+		    &lt;dt&gt;Here&#39;s another term&lt;/dt&gt;
+		    &lt;dd&gt;And here&#39;s the definition that would go with it.&lt;/dd&gt;
+		&lt;/dl&gt;</code></pre>
+		<p><em>For semantic reasons, <code>.list-unstyled</code> and <code>.list-inline</code> should only be applied to unordered lists.</em></p>
+		<hr>
+		<h2 id="headings">Headings</h2>
+		<p>Kraken includes styling for <code>h1</code> through <code>h6</code> headings.</p>
+		<h1>h1. Heading 1</h1>
+		<h2>h2. Heading 2</h2>
+		<h3>h3. Heading 3</h3>
+		<h4>h4. Heading 4</h4>
+		<h5>h5. Heading 5</h5>
+		<h6>h6. Heading 6</h6>
+
+
+		<pre><code class="language-html">&lt;h1&gt;h1. Heading 1&lt;/h1&gt;
+		&lt;h2&gt;h2. Heading 2&lt;/h2&gt;
+		&lt;h3&gt;h3. Heading 3&lt;/h3&gt;
+		&lt;h4&gt;h4. Heading 4&lt;/h4&gt;
+		&lt;h5&gt;h5. Heading 5&lt;/h5&gt;
+		&lt;h6&gt;h6. Heading 6&lt;/h6&gt;</code></pre>
+		<h3 id="semantic-heading-classes">Semantic Heading Classes</h3>
+		<p>All heading values can also be applied as classes. For example, if a heading should be an <code>h1</code> element semantically, but you would like it to be styled as an <code>h4</code> element, you can apply <code>class=&quot;h4&quot;</code> to the <code>h1</code> element.</p>
+		<h1 class="h4">This is an h1 heading that's styled as an h4 heading</h1>
+
+		<pre><code class="language-html">&lt;h1 class=&quot;h4&quot;&gt;This is an h1 heading that&#39;s styled as an h4 heading&lt;/h1&gt;</code></pre>
+		<hr>
+		<h2 id="quotes--citations">Quotes &amp; Citations</h2>
+		<blockquote>
+		    Someone once said something so important, it was deemed worthy of repeating here in the form of a blockquote. This is that blockquote.
+		    <cite>- Someone Important</cite>
+		</blockquote>
+
+		<p>You can also include superscripts<sup>1</sup> and subscripts<sub>xyz</sub>.</p>
+		<pre><code class="language-html">&lt;blockquote&gt;
+		    Someone once said something so important, it was deemed worthy of repeating here in the form of a blockquote. This is that blockquote.
+		    &lt;cite&gt;- Someone Important&lt;/cite&gt;
+		&lt;/blockquote&gt;
+
+		You can also include superscripts&lt;sup&gt;1&lt;/sup&gt; and subscripts&lt;sub&gt;xyz&lt;/sub&gt;.</code></pre>
+		<hr>
+		<h2 id="code">Code</h2>
+		<p>Inline code: <code>.js-example</code>.</p>
+		<pre><code>/* Preformatted Text */
+		.js-example {
+		    color: #272727;
+		    background: #ffffff;
+		}</code></pre><pre><code class="language-html">&lt;p&gt;Inline code: &lt;code&gt;.js-example&lt;/code&gt;&lt;/p&gt;
+
+		&lt;pre&gt;&lt;code&gt;/* Preformatted Text */
+		.js-example {
+		    color: #272727;
+		    background: #ffffff;
+		}&lt;/code&gt;&lt;/pre&gt;</code></pre>
+		<p>You&#39;ll need to escape brackets contained in code by typing <code>&amp;lt;</code> for <code>&lt;</code> and <code>&amp;gt;</code> for <code>&gt;</code>. The syntax highlighting used in this documentation is provided by <a href="http://prismjs.com/">Prism</a> by Lea Verou.</p>
+		<hr>
+		<h2 id="lines">Lines</h2>
+		<p>Add lines to your markup using the <code>&lt;hr&gt;</code> element.</p>
+		<hr>
+		<h2 id="buttons">Buttons</h2>
+		<p>Button styles can be applied to anything with the <code>.btn</code> class applied. However, typically you&#39;ll want to apply these to only <code>a</code>, <code>button</code>, and <code>&lt;input type=&quot;submit&quot;&gt;</code> elements for the best rendering.</p>
+		<h3 id="basic-buttons">Basic Buttons</h3>
+		<p><button class="btn">Button</button>
+		<button class="btn btn-secondary">Button Secondary</button>
+		<button class="btn btn-large">Button Large</button></p>
+		<p><button class="btn btn-block">Button Block</button>
+		<button class="btn btn-secondary btn-block">Button Block</button></p>
+		<pre><code class="language-html">&lt;button class=&quot;btn&quot;&gt;Button&lt;/button&gt;
+		&lt;button class=&quot;btn btn-secondary&quot;&gt;Button Secondary&lt;/button&gt;
+		&lt;button class=&quot;btn btn-large&quot;&gt;Button Large&lt;/button&gt;
+
+		&lt;button class=&quot;btn btn-block&quot;&gt;Button Block&lt;/button&gt;
+		&lt;button class=&quot;btn btn-secondary btn-block&quot;&gt;Button Block&lt;/button&gt;
+
+		&lt;button class=&quot;btn active&quot;&gt;Button Active&lt;/button&gt;
+		&lt;button class=&quot;btn btn-secondary active&quot;&gt;Button Secondary Active&lt;/button&gt;
+
+		&lt;button class=&quot;btn&quot; disabled&gt;Button Disabled&lt;/button&gt;
+		&lt;button class=&quot;btn btn-secondary&quot; disabled&gt;Button Secondary Disabled&lt;/button&gt;</code></pre>
+		<h3 id="disabled-buttons">Disabled Buttons</h3>
+		<p>Use the <code>[disabled]</code> attribute to change the appearance of buttons&mdash;useful for creating apps.</p>
+		<p><button class="btn" disabled>Disabled</button>
+		<button class="btn btn-secondary" disabled>Secondary Disabled</button></p>
+		<pre><code class="language-html">&lt;button class=&quot;btn&quot; disabled&gt;Disabled&lt;/button&gt;
+		&lt;button class=&quot;btn btn-secondary&quot; disabled&gt;Secondary Disabled&lt;/button&gt;</code></pre>
+		<hr>
+		<h2 id="tables">Tables</h2>
+		<p>Kraken includes simple, easy-to-read table styling.</p>
+		<table>
+		    <thead>
+		        <tr>
+		            <th>First Name</th>
+		            <th>Last Name</th>
+		            <th>Super Hero</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <tr>
+		            <td>Peter</td>
+		            <td>Parker</td>
+		            <td>Spiderman</td>
+		        </tr>
+		        <tr>
+		            <td>Bruce</td>
+		            <td>Wayne</td>
+		            <td>Batman</td>
+		        </tr>
+		        <tr>
+		            <td>Clark</td>
+		            <td>Kent</td>
+		            <td>Superman</td>
+		        </tr>
+		    </tbody>
+		</table>
+
+		<pre><code class="language-html">&lt;table&gt;
+		    &lt;thead&gt;
+		        &lt;tr&gt;
+		            &lt;th&gt;First Name&lt;/th&gt;
+		            &lt;th&gt;Last Name&lt;/th&gt;
+		            &lt;th&gt;Super Hero&lt;/th&gt;
+		        &lt;/tr&gt;
+		    &lt;/thead&gt;
+		    &lt;tbody&gt;
+		        &lt;tr&gt;
+		            &lt;td&gt;Peter&lt;/td&gt;
+		            &lt;td&gt;Parker&lt;/td&gt;
+		            &lt;td&gt;Spiderman&lt;/td&gt;
+		        &lt;/tr&gt;
+		        &lt;tr&gt;
+		            &lt;td&gt;Bruce&lt;/td&gt;
+		            &lt;td&gt;Wayne&lt;/td&gt;
+		            &lt;td&gt;Batman&lt;/td&gt;
+		        &lt;/tr&gt;
+		        &lt;tr&gt;
+		            &lt;td&gt;Clark&lt;/td&gt;
+		            &lt;td&gt;Kent&lt;/td&gt;
+		            &lt;td&gt;Superman&lt;/td&gt;
+		        &lt;/tr&gt;
+		    &lt;/tbody&gt;
+		&lt;/table&gt;</code></pre>
+		<h3 id="condensed-table">Condensed Table</h3>
+		<p>Add the <code>.table-condensed</code> class for more compact tables.</p>
+		<table class="table-condensed">
+		    <thead>
+		        <tr>
+		            <th>First Name</th>
+		            <th>Last Name</th>
+		            <th>Super Hero</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <tr>
+		            <td>Peter</td>
+		            <td>Parker</td>
+		            <td>Spiderman</td>
+		        </tr>
+		        <tr>
+		            <td>Bruce</td>
+		            <td>Wayne</td>
+		            <td>Batman</td>
+		        </tr>
+		        <tr>
+		            <td>Clark</td>
+		            <td>Kent</td>
+		            <td>Superman</td>
+		        </tr>
+		    </tbody>
+		</table>
+
+		<pre><code class="language-html">&lt;table class=&quot;table-condensed&quot;&gt;
+		    &lt;!-- Your table content... --&gt;
+		&lt;/table&gt;</code></pre>
+		<h3 id="zebra-striping">Zebra Striping</h3>
+		<p>Add zebra striping for easier readability with the <code>.table-striped</code> class.</p>
+		<table class="table-striped">
+		    <thead>
+		        <tr>
+		            <th>First Name</th>
+		            <th>Last Name</th>
+		            <th>Super Hero</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <tr>
+		            <td>Peter</td>
+		            <td>Parker</td>
+		            <td>Spiderman</td>
+		        </tr>
+		        <tr>
+		            <td>Bruce</td>
+		            <td>Wayne</td>
+		            <td>Batman</td>
+		        </tr>
+		        <tr>
+		            <td>Clark</td>
+		            <td>Kent</td>
+		            <td>Superman</td>
+		        </tr>
+		    </tbody>
+		</table>
+
+		<pre><code class="language-html">&lt;table class=&quot;table-striped&quot;&gt;
+		    &lt;!-- Your table content... --&gt;
+		&lt;/table&gt;</code></pre>
+		<h3 id="combining-classes">Combining Classes</h3>
+		<p>Classes can be combined as needed.</p>
+		<table class="table-condensed table-striped">
+		    <thead>
+		        <tr>
+		            <th>First Name</th>
+		            <th>Last Name</th>
+		            <th>Super Hero</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <tr>
+		            <td data-label="First Name">Peter</td>
+		            <td data-label="Last Name">Parker</td>
+		            <td data-label="Super Hero">Spiderman</td>
+		        </tr>
+		        <tr>
+		            <td data-label="First Name">Bruce</td>
+		            <td data-label="Last Name">Wayne</td>
+		            <td data-label="Super Hero">Batman</td>
+		        </tr>
+		        <tr>
+		            <td data-label="First Name">Clark</td>
+		            <td data-label="Last Name">Kent</td>
+		            <td data-label="Super Hero">Superman</td>
+		        </tr>
+		    </tbody>
+		</table>
+
+		<pre><code class="language-html">&lt;table class=&quot;table-condensed table-striped&quot;&gt;
+		    &lt;!-- Your table content... --&gt;
+		&lt;/table&gt;</code></pre>
+		<hr>
+		<h2 id="forms">Forms</h2>
+		<p>Labels, legends and inputs are styled as full width block elements (with the exception of checkboxes and radio buttons).</p>
+		<h3 id="basic-forms">Basic Forms</h3>
+		<form>
+		    <label for="input">Label</label>
+		    <input type="text" id="input">
+		    <label>
+		        <input type="checkbox">
+		        Option 1
+		    </label>
+		    <label>
+		        <input type="checkbox">
+		        Option 2
+		    </label>
+		    <label>
+		        <input type="radio" name="radioset">
+		        Option A
+		    </label>
+		    <label>
+		        <input type="radio" name="radioset">
+		        Option B
+		    </label>
+		    <label for="select">Select Menu</label>
+		    <select id="select">
+		        <option>Select 1</option>
+		        <option>Select 2</option>
+		        <option>Select 3</option>
+		    </select>
+		    <label for="select" for="textarea">Textarea</label>
+		    <textarea id="text-area"></textarea>
+		</form>
+
+		<pre><code class="language-html">&lt;form&gt;
+		    &lt;label for=&quot;input&quot;&gt;Label&lt;/label&gt;
+		    &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+
+		    &lt;label&gt;
+		        &lt;input type=&quot;checkbox&quot;&gt;
+		        Option 1
+		    &lt;/label&gt;
+		    &lt;label&gt;
+		        &lt;input type=&quot;checkbox&quot;&gt;
+		        Option 2
+		    &lt;/label&gt;
+
+		    &lt;label&gt;
+		        &lt;input type=&quot;radio&quot; name=&quot;radioset&quot;&gt;
+		        Option A
+		    &lt;/label&gt;
+		    &lt;label&gt;
+		        &lt;input type=&quot;radio&quot; name=&quot;radioset&quot;&gt;
+		        Option B
+		    &lt;/label&gt;
+
+		    &lt;label for=&quot;select&quot;&gt;Select Menu&lt;/label&gt;
+		    &lt;select id=&quot;select&quot;&gt;
+		        &lt;option&gt;Select 1&lt;/option&gt;
+		        &lt;option&gt;Select 2&lt;/option&gt;
+		        &lt;option&gt;Select 3&lt;/option&gt;
+		    &lt;/select&gt;
+
+		    &lt;label for=&quot;select&quot; for=&quot;textarea&quot;&gt;Select Menu&lt;/label&gt;
+		    &lt;textarea id=&quot;text-area&quot;&gt;&lt;/textarea&gt;
+		&lt;/form&gt;</code></pre>
+		<p><em>Wrap checkboxes and radio buttons inside a <code>label</code> to make them easier to click.</em></p>
+		<h3 id="condensed--inline-inputs">Condensed &amp; Inline Inputs</h3>
+		<p>For smaller forms, add the <code>.input-condensed</code> class to your input fields. For inline form elements, add the <code>.input-inline</code> class.</p>
+		<form>
+		    <input type="text" class="input-inline" placeholder=".input-inline">
+		    <input type="text" class="input-condensed input-inline" placeholder=".input-condensed">
+		</form>
+
+		<pre><code class="language-html">&lt;form&gt;
+		    &lt;input type=&quot;text&quot; class=&quot;input-inline&quot;&gt;
+		    &lt;input type=&quot;text&quot; class=&quot;input-condensed input-inline&quot;&gt;
+		&lt;/form&gt;</code></pre>
+		<h3 id="search-forms">Search Forms</h3>
+		<p>Apply special styling to search form elements using the <code>.input-search</code> and <code>.btn-search</code> classes. You&#39;ll also need to use the <code>.input-inline</code> class.</p>
+		<form>
+		    <label class="visually-hidden" for="search">Search this site</label>
+		    <input type="text" class="input-inline input-search no-margin-bottom" id="search" name="search" placeholder="Your search terms..." value="">
+		    <button type="submit" class="btn-search" id="searchsubmit">
+		        <svg xmlns="http://www.w3.org/2000/svg" style="height:1em;width:1em;" viewBox="0 0 32 32" aria-describedby="search-button-title"><title id="search-button-title">Search</title><path fill="currentColor" d="M31.008 27.23l-7.58-6.446c-.784-.705-1.622-1.03-2.3-.998C22.92 17.69 24 14.97 24 12 24 5.37 18.627 0 12 0S0 5.37 0 12c0 6.626 5.374 12 12 12 2.973 0 5.692-1.082 7.788-2.87-.03.676.293 1.514.998 2.298l6.447 7.58c1.105 1.226 2.908 1.33 4.008.23s.997-2.903-.23-4.007zM12 20c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"/></svg>
+		    </button>
+		</form>
+
+		<pre><code class="language-html">&lt;form&gt;
+		    &lt;label class=&quot;visually-hidden&quot; for=&quot;search&quot;&gt;Search this site&lt;/label&gt;
+		    &lt;input type=&quot;text&quot; class=&quot;input-inline input-search no-margin-bottom&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Your search terms...&quot; value=&quot;&quot;&gt;
+		    &lt;button type=&quot;submit&quot; class=&quot;btn-search&quot; id=&quot;searchsubmit&quot;&gt;
+		        &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; style=&quot;height:1em;width:1em;&quot; viewBox=&quot;0 0 32 32&quot; aria-describedby=&quot;search-button-title&quot;&gt;&lt;title id=&quot;search-button-title&quot;&gt;Search&lt;/title&gt;&lt;path fill=&quot;currentColor&quot; d=&quot;M31.008 27.23l-7.58-6.446c-.784-.705-1.622-1.03-2.3-.998C22.92 17.69 24 14.97 24 12 24 5.37 18.627 0 12 0S0 5.37 0 12c0 6.626 5.374 12 12 12 2.973 0 5.692-1.082 7.788-2.87-.03.676.293 1.514.998 2.298l6.447 7.58c1.105 1.226 2.908 1.33 4.008.23s.997-2.903-.23-4.007zM12 20c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z&quot;/&gt;&lt;/svg&gt;
+		    &lt;/button&gt;
+		&lt;/form&gt;</code></pre>
+		<hr>
+		<h2 id="alignment-spacing--visibility">Alignment, Spacing &amp; Visibility</h2>
+		<p>You can adjust text alignment, spacing, and visibility using a few simple CSS classes.</p>
+		<h3 id="text-alignment">Text Alignment</h3>
+		<table>
+		<thead>
+		<tr>
+		<th>Class</th>
+		<th>Alignment</th>
+		</tr>
+		</thead>
+		<tbody><tr>
+		<td><code>.text-left</code></td>
+		<td>Left</td>
+		</tr>
+		<tr>
+		<td><code>.text-center</code></td>
+		<td>Centered</td>
+		</tr>
+		<tr>
+		<td><code>.text-right</code></td>
+		<td>Right</td>
+		</tr>
+		<tr>
+		<td><code>.text-right-medium</code></td>
+		<td>Right above 40em</td>
+		</tr>
+		</tbody></table>
+		<h3 id="floats">Floats</h3>
+		<table>
+		<thead>
+		<tr>
+		<th>Class</th>
+		<th>Float</th>
+		</tr>
+		</thead>
+		<tbody><tr>
+		<td><code>.float-left</code></td>
+		<td>Left</td>
+		</tr>
+		<tr>
+		<td><code>.float-center</code></td>
+		<td>Centered</td>
+		</tr>
+		<tr>
+		<td><code>.float-right</code></td>
+		<td>Right</td>
+		</tr>
+		</tbody></table>
+		<p><em>Clear floats by wrapping floated content in a <code>div</code> with the <code>.clearfix</code> class.</em></p>
+		<pre><code class="language-html">&lt;div class=&quot;clearfix&quot;&gt;
+		    &lt;button class=&quot;float-right&quot;&gt;Floated to the Right&lt;/button&gt;
+		    &lt;button&gt;Not floated&lt;/button&gt;
+		&lt;/div&gt;</code></pre>
+		<h3 id="margins">Margins</h3>
+		<table>
+		<thead>
+		<tr>
+		<th>Class</th>
+		<th>Margin</th>
+		</tr>
+		</thead>
+		<tbody><tr>
+		<td><code>.no-margin-top</code></td>
+		<td>top: <code>0</code></td>
+		</tr>
+		<tr>
+		<td><code>.no-margin-bottom</code></td>
+		<td>bottom: <code>0</code></td>
+		</tr>
+		<tr>
+		<td><code>.margin-top</code></td>
+		<td>top: <code>1.5625em</code></td>
+		</tr>
+		<tr>
+		<td><code>.margin-bottom</code></td>
+		<td>bottom: <code>1.5625em</code></td>
+		</tr>
+		<tr>
+		<td><code>.margin-bottom-small</code></td>
+		<td>bottom: <code>0.5em</code></td>
+		</tr>
+		<tr>
+		<td><code>.margin-bottom-large</code></td>
+		<td>bottom: <code>2em</code></td>
+		</tr>
+		</tbody></table>
+		<h3 id="padding">Padding</h3>
+		<table>
+		<thead>
+		<tr>
+		<th>Class</th>
+		<th>padding</th>
+		</tr>
+		</thead>
+		<tbody><tr>
+		<td><code>.no-padding-top</code></td>
+		<td>top: <code>0</code></td>
+		</tr>
+		<tr>
+		<td><code>.no-padding-bottom</code></td>
+		<td>bottom: <code>0</code></td>
+		</tr>
+		<tr>
+		<td><code>.padding-top</code></td>
+		<td>top: <code>1.5625em</code></td>
+		</tr>
+		<tr>
+		<td><code>.padding-top-small</code></td>
+		<td>top: <code>0.5em</code></td>
+		</tr>
+		<tr>
+		<td><code>.padding-top-large</code></td>
+		<td>top: <code>2em</code></td>
+		</tr>
+		<tr>
+		<td><code>.padding-bottom</code></td>
+		<td>bottom: <code>1.5625em</code></td>
+		</tr>
+		<tr>
+		<td><code>.padding-bottom-small</code></td>
+		<td>bottom: <code>0.5em</code></td>
+		</tr>
+		<tr>
+		<td><code>.padding-bottom-large</code></td>
+		<td>bottom: <code>2em</code></td>
+		</tr>
+		</tbody></table>
+		<h3 id="visibility">Visibility</h3>
+		<p>Hide content using the <code>[hidden]</code> attribute.</p>
+		<pre><code class="language-html">&lt;div hidden&gt;This is removed from the markup.&lt;/div&gt;</code></pre>
+		<p>If you have text that you don&#39;t want displayed on screen, but that should still be in the markup for screen readers (for example, a search form label), simply apply the <code>.visually-hidden</code> class.</p></p>
+		<pre><code class="language-html">&lt;form&gt;
+		    &lt;label class=&quot;visually-hidden&quot;&gt;Search this site&lt;/label&gt;
+		    &lt;input type=&quot;text&quot; placeholder=&quot;Search this site...&quot;&gt;
+		    &lt;input type=&quot;submit&quot;&gt;
+		&lt;/form&gt;</code></pre>
+		<p>For visually hidden content that should become visible on focus (such as a <a href="http://webaim.org/techniques/skipnav/">skip nav link</a> for sighted users navigating by keyboard), add the <code>.focusable</code> class.</p>
+		<pre><code class="language-html">&lt;a class=&quot;visually-hidden focusable&quot; href=&quot;#main&quot;&gt;Skip to content&lt;/a&gt;</code></pre>
+		<h2 id="tabindex--focus-styles">Tabindex &amp; Focus Styles</h2>
+		<p>Focusable elements should <em>always</em> have <code>:focus</code> styles on them. You can customize them, but don&#39;t remove them altogether.</p>
+		<p>If you need to programmatically add focus to an element that&#39;s not normally focusable (like a <code>div</code>), you need to give it a <code>tabindex</code> attribute of <code>-1</code>. However, this also applies <code>:focus</code> styles, which are likely not desired or needed in these rare edge cases.</p>
+		<p>Kraken removes the default outline from items with <code>[tabindex=&quot;-1&quot;]</code>.</p>
+		<pre><code class="language-html">&lt;a class=&quot;visually-hidden focusable&quot; href=&quot;#main&quot;&gt;Skip to content&lt;/a&gt;
+		...
+		&lt;main id=&quot;main&quot; tabindex=&quot;-1&quot;&gt;
+		    ...
+		&lt;/main&gt;</code></pre>
+		</main>
+	</body>
+</html>
